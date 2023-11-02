@@ -21,9 +21,17 @@ public class HelloWorldView extends HorizontalLayout {
     public HelloWorldView() {
         name = new TextField("Your name");
         sayHello = new Button("Say hello");
+        //...
         sayHello.addClickListener(e -> {
-            Notification.show("Hello " + name.getValue());
+            if (name.getValue().equalsIgnoreCase("bagas")) {
+                Notification.show("halo bagas, pacarnya el");
+            } else if(name.getValue().equalsIgnoreCase("elel")) {
+                Notification.show("halo el, pacarnya bagas");
+            }else{
+                Notification.show("Hawwwookkkk " + name.getValue());
+            }
         });
+
         sayHello.addClickShortcut(Key.ENTER);
 
         setMargin(true);
